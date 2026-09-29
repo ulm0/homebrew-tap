@@ -4,6 +4,15 @@ Homebrew tap for [Ventilador](https://github.com/ulm0/ventilador), fan control f
 
 ## Install
 
+Add the tap once, then install the cask:
+
+```bash
+brew tap ulm0/tap
+brew install --cask ventilador
+```
+
+Or do both in one step:
+
 ```bash
 brew install --cask ulm0/tap/ventilador
 ```
@@ -16,9 +25,12 @@ Requires an Apple Silicon Mac and macOS 26 or later.
 ## Update and remove
 
 ```bash
+brew update                                # refresh the tap
 brew upgrade --cask ventilador
 brew uninstall --cask ventilador          # add --zap to also remove preferences and logs
 ```
+
+To stop using the tap: `brew untap ulm0/tap`.
 
 ## About this tap
 
