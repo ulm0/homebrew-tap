@@ -1,6 +1,6 @@
 cask "ventilador" do
-  version "1.0.1"
-  sha256 "169fc62338505592d065fadd4295dc3a2c714c4a0f3d45fea274b876b3bf8ada"
+  version "1.1.0"
+  sha256 "634bad230d0199041394e54bc8af7fe1a5e39e2305c36760fdb01754bcb3baa8"
 
   url "https://github.com/ulm0/ventilador/releases/download/v#{version}/Ventilador-#{version}.zip"
   name "Ventilador"
