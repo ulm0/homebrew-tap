@@ -5,8 +5,8 @@
 class Gonogo < Formula
   desc "Self-hosted mission control for AI coding agents"
   homepage "https://gonogo.ulm0.com/"
-  url "https://github.com/ulm0/gonogo/releases/download/v0.9.0/ulm0-gonogo-0.9.0.tgz"
-  sha256 "a18f655aa7068aa790724f51e550d505c98cc691808975d73d8ce429616f086d"
+  url "https://github.com/ulm0/gonogo/releases/download/v0.9.1/ulm0-gonogo-0.9.1.tgz"
+  sha256 "da55cd723808ee857b135a62635752494ddb46eb4500ea9779e97f3b07235a0c"
   license "MIT"
 
   # package.json needs node >= 24; Homebrew's `node` is that or newer. If a future node major breaks gonogo, pin node@24 here
