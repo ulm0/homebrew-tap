@@ -1,10 +1,12 @@
 # The Homebrew formula for gonogo. Lives in the tap ulm0/homebrew-tap as Formula/gonogo.rb; this copy is the template the
-# release workflow (job `homebrew`) rewrites: it replaces only the `url` and `sha256` lines, so keep them one per line.
+# release workflow (job `homebrew`) rewrites: it replaces only the `url` and `sha256` lines, so keep them one per line. The url is the
+# `pnpm pack` tarball the same workflow attached to the GitHub Release (not the npm registry's, which can lag for minutes), and the
+# sha256 is that file's. The values here are placeholders until the job writes the tap's copy.
 class Gonogo < Formula
   desc "Self-hosted mission control for AI coding agents"
   homepage "https://gonogo.ulm0.com/"
-  url "https://registry.npmjs.org/@ulm0/gonogo/-/gonogo-0.8.1.tgz"
-  sha256 "ba22bc368fe17591ddba55ffac6a5701ae51597929e298e3ba30eccddb68362a"
+  url "https://github.com/ulm0/gonogo/releases/download/v0.8.2/ulm0-gonogo-0.8.2.tgz"
+  sha256 "2650a69af5d5afb724b150b18a6a24b49ee7ca3986dae2d484067beaf9c7e026"
   license "MIT"
 
   # package.json needs node >= 24; Homebrew's `node` is that or newer. If a future node major breaks gonogo, pin node@24 here
