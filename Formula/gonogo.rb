@@ -1,21 +1,22 @@
-# The Homebrew formula for gonogo. Lives in the tap ulm0/homebrew-tap as Formula/gonogo.rb; this copy is the template the
-# release workflow (job `homebrew`) rewrites: it replaces only the `url` and `sha256` lines, so keep them one per line. The url is the
-# `pnpm pack` tarball the same workflow attached to the GitHub Release (not the npm registry's, which can lag for minutes), and the
-# sha256 is that file's. The values here are placeholders until the job writes the tap's copy.
+# The Homebrew formula for gonogo. Lives in the tap ulm0/homebrew-tap as Formula/gonogo.rb; this copy is the
+# template the release workflow (job `homebrew`) rewrites: it replaces only the `url` and `sha256` lines, so keep
+# them one per line. The url is the `pnpm pack` tarball the same workflow attached to the GitHub Release (not the
+# npm registry's, which can lag for minutes), and the sha256 is that file's. The values here are placeholders until
+# the job writes the tap's copy. Lines stay within 118 characters: `brew audit --strict` refuses longer ones.
 class Gonogo < Formula
   desc "Self-hosted mission control for AI coding agents"
   homepage "https://gonogo.ulm0.com/"
-  url "https://github.com/ulm0/gonogo/releases/download/v0.11.1/ulm0-gonogo-0.11.1.tgz"
-  sha256 "786f5fcf91a2c9486008b65a81a674dcaf7041020759d435e6ce36b7a4590b9e"
+  url "https://github.com/ulm0/gonogo/releases/download/v0.12.0/ulm0-gonogo-0.12.0.tgz"
+  sha256 "62e5bf512c9a38e61480066d6616cb07662fb8a91fd0db4d1978cbd6780fcc39"
   license "MIT"
 
-  # package.json needs node >= 24; Homebrew's `node` is that or newer. If a future node major breaks gonogo, pin node@24 here
-  # and bump `revision`.
+  # package.json needs node >= 24; Homebrew's `node` is that or newer. If a future node major breaks gonogo, pin
+  # node@24 here and bump `revision`.
   depends_on "node"
 
   def install
-    # std_npm_args installs into libexec in npm's global layout and ignores lifecycle scripts. The native part, node-pty,
-    # comes as a prebuilt binary in an optional per-platform package, so nothing is compiled here.
+    # std_npm_args installs into libexec in npm's global layout and ignores lifecycle scripts. The native part,
+    # node-pty, comes as a prebuilt binary in an optional per-platform package, so nothing is compiled here.
     system "npm", "install", *std_npm_args
     bin.install_symlink libexec.glob("bin/*")
   end
